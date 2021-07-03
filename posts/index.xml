@@ -1,4 +1,101 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Neil Naveen</title><link>https://neilnaveen.dev/posts/</link><description>Recent content in Posts on Neil Naveen</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Wed, 24 Feb 2021 16:51:02 -0500</lastBuildDate><atom:link href="https://neilnaveen.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode-1768</title><link>https://neilnaveen.dev/posts/leetcode-1768/</link><pubDate>Wed, 24 Feb 2021 16:51:02 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1768/</guid><description>1768. Merge Strings Alternately
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Neil Naveen</title><link>https://neilnaveen.dev/posts/</link><description>Recent content in Posts on Neil Naveen</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 03 Jul 2021 18:37:13 -0500</lastBuildDate><atom:link href="https://neilnaveen.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 1323</title><link>https://neilnaveen.dev/posts/leetcode-1323/</link><pubDate>Sat, 03 Jul 2021 18:37:13 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1323/</guid><description>1323. Maximum 69 Number
+This problem is about taking a number, lets say9669 and making it the largest number it could be by fliping one digit from a 6 to a 9.
+The solution is made up of five parts.
+One is where we split the number into its digits.
+Two is were we revese the array of digits becasue when you split a number like how we did, its in reverse order.</description><content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/maximum-69-number/">1323. Maximum 69 Number</a></p>
+<p>This problem is about taking a number, lets say<code>9669</code>  and making it the largest number it could be by fliping one digit from a <code>6</code> to a <code>9</code>.</p>
+<p>The solution is made up of five parts.</p>
+<ol>
+<li>
+<p>One is where we split the number into its digits.</p>
+</li>
+<li>
+<p>Two is were we revese the array of digits  becasue when you split a number like how we did, its in reverse order.</p>
+</li>
+<li>
+<p>The next one is for finding the first <code>6</code> and changing it to a <code>9</code>.</p>
+</li>
+<li>
+<p>Just before adding all the numbers together in  a sum we had to figure out how much should the first digit and the second and so on be multiplyed by to get into its right form and not just the digits added up</p>
+</li>
+<li>
+<p>Last of all in code the digits are summed up</p>
+</li>
+</ol>
+<hr>
+<p>This is the first part, we adding the last digit to the array and dividing the number by ten to take of the last digit , now we have an array of the digits of the number</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">for</span> num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>{
+    arr <span style="color:#f92672">=</span> append(arr,num <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+    num<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>
+}
+</code></pre></div><hr>
+<p>This is the part for reversing the array. We have pointers on either side of the array, we then flip the digit on one pointer with the other pointers digit and visa versa.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">l , r :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> , len(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> l <span style="color:#f92672">&lt;</span> r{ 
+    arr[l] , arr[r] <span style="color:#f92672">=</span> arr[r] , arr[l]
+    l<span style="color:#f92672">++</span>
+    r<span style="color:#f92672">--</span>
+}
+</code></pre></div><hr>
+<p>This part is for finding the first digit that is a <code>6</code> and changes it to a <code>9</code>  by finding the first accurnce of a <code>6</code>, changing it to a 9 and breaking out of the loop so it doesn&rsquo;t change more than one digit</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">for</span> i2,i :<span style="color:#f92672">=</span> range arr{
+    <span style="color:#66d9ef">if</span> i <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span>{
+        arr[i2] <span style="color:#f92672">=</span> <span style="color:#ae81ff">9</span>
+        <span style="color:#66d9ef">break</span>
+    }
+}
+</code></pre></div><hr>
+<p>This part gets the number that we have to multiply to the first digit to get its before placevalue . It does this by multiplying 1 by 10 for how long the number is <code>-1</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c">nummultiplyer :<span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
+<span style="color:#66d9ef">for</span> i :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ; i <span style="color:#f92672">&lt;</span> len(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ; i<span style="color:#f92672">++</span>{
+    nummultiplyer <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>
+}
+</code></pre></div><hr>
+<p>This is the last part tis is were we add all the digits to a sum. If we add the digits all by itself the sum will not be like the first number with one digit fliped, for this we need to add the numbers times the <code>nummultiplyer</code> so it is at the correct placevalue and then we divide the <code>nummultiplyer</code> by ten so it give to correct placevalue for the second number and so on.</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-c" data-lang="c"><span style="color:#66d9ef">for</span> _,i :<span style="color:#f92672">=</span> range arr{
+    sum <span style="color:#f92672">+=</span> i<span style="color:#f92672">*</span>nummultiplyer
+    nummultiplyer<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>
+}
+<span style="color:#66d9ef">return</span> sum
+</code></pre></div><hr>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">maximum69Number</span>(<span style="color:#a6e22e">num</span> <span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#a6e22e">arr</span> <span style="color:#f92672">:=</span> []<span style="color:#66d9ef">int</span>{}
+    
+    <span style="color:#75715e">// dividing up the number into a list of its digits
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">num</span> &gt; <span style="color:#ae81ff">0</span>{
+        <span style="color:#a6e22e">arr</span> = append(<span style="color:#a6e22e">arr</span>,<span style="color:#a6e22e">num</span><span style="color:#f92672">%</span><span style="color:#ae81ff">10</span>)
+        <span style="color:#a6e22e">num</span><span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>
+    }
+    
+    <span style="color:#75715e">// reversing the list of digits , becasue when we made a list of all of the digits it was reversed
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">l</span> , <span style="color:#a6e22e">r</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> , len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">l</span> &lt; <span style="color:#a6e22e">r</span>{ 
+        <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">l</span>] , <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">r</span>] = <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">r</span>] , <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">l</span>]
+        <span style="color:#a6e22e">l</span><span style="color:#f92672">++</span>
+        <span style="color:#a6e22e">r</span><span style="color:#f92672">--</span>
+    }
+    
+    <span style="color:#75715e">// this is for finding the first digits that is a 6 and changing it to a nine
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i2</span>,<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span>{
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">==</span> <span style="color:#ae81ff">6</span>{
+            <span style="color:#a6e22e">arr</span>[<span style="color:#a6e22e">i2</span>] = <span style="color:#ae81ff">9</span>
+            <span style="color:#66d9ef">break</span>
+        }
+    }
+    <span style="color:#75715e">// this is for finding how many zeros should the first number be multiplyed by
+</span><span style="color:#75715e"></span>    <span style="color:#a6e22e">nummultiplyer</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span> ; <span style="color:#a6e22e">i</span> &lt; len(<span style="color:#a6e22e">arr</span>)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>{
+        <span style="color:#a6e22e">nummultiplyer</span> <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>
+    }
+    <span style="color:#75715e">//and this is for remaking the list back into a array
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">arr</span>{
+        <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">i</span><span style="color:#f92672">*</span><span style="color:#a6e22e">nummultiplyer</span>
+        <span style="color:#a6e22e">nummultiplyer</span><span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">sum</span>
+}
+</code></pre></div>]]></content></item><item><title>Leetcode-1768</title><link>https://neilnaveen.dev/posts/leetcode-1768/</link><pubDate>Wed, 24 Feb 2021 16:51:02 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1768/</guid><description>1768. Merge Strings Alternately
 func mergeAlternately(word1 string, word2 string) string { mergestringres := &amp;quot;&amp;quot; for i, i2 := range word1 { mergestringres += string(i2) if len(word2) &amp;gt; i { mergestringres += string(word2[i]) } } if len(word1) &amp;lt; len(word2) { mergestringres += word2[len(word1):] } return mergestringres }</description><content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/merge-strings-alternately/">1768. Merge Strings Alternately
 </a></p>
 <pre><code>func mergeAlternately(word1 string, word2 string) string {
