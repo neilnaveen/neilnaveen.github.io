@@ -1,7 +1,6 @@
 ---
 title: "Leetcode 1323"
 date: 2021-07-03T18:37:13-05:00
-draft: true
 tags : [leetcode,math,golang]
 ---
 
