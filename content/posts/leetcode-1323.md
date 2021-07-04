@@ -9,22 +9,22 @@ tags : [leetcode,math,golang]
 
 [1323. Maximum 69 Number](https://leetcode.com/problems/maximum-69-number/)
 
-This problem is about taking a number, lets say`9669`  and making it the largest number it could be by fliping one digit from a `6` to a `9`.
+This problem is about taking a number, let's say`9669`, and making it the largest number it could be by flipping one digit from a `6` to a `9`.
 
 The solution is made up of five parts.
-1. One is where we split the number into its digits.
+1. We split the number into its digits.
 
-1. Two is were we revese the array of digits  becasue when you split a number like how we did, its in reverse order.
+1. We reverse the array of digits because it reverses the order when you split a number as we did.
 
-1. The next one is for finding the first `6` and changing it to a `9`.
+1. Then we find the first `6` and change it to a `9`.
 
-1. Just before adding all the numbers together in  a sum we had to figure out how much should the first digit and the second and so on be multiplyed by to get into its right form and not just the digits added up
+1. Just before adding all the numbers together in a sum, we had to figure out how much should the digits be multiplied by to get into their correct form and not just the digits added up
 
-3. Last of all in code the digits are summed up
+3. Last of all, in code, the digits are summed up
 
 ***
 
-This is the first part, we adding the last digit to the array and dividing the number by ten to take of the last digit , now we have an array of the digits of the number
+In the first part, we add the last digit to the array and dividing the number by ten to take the last digit off. Now we have an array of the digits of the number reversed
 ``` c
 for num > 0{
     arr = append(arr,num % 10)
@@ -34,7 +34,7 @@ for num > 0{
 
 ***
 
-This is the part for reversing the array. We have pointers on either side of the array, we then flip the digit on one pointer with the other pointers digit and visa versa.
+This is the part for reversing the array. We have pointers on either side of the array. We then flip the digit on the left pointer digit with the right pointer digit and vice versa.
 
 ```c
 l , r := 0 , len(arr)-1
@@ -47,7 +47,7 @@ for l < r{
 
 ***
 
-This part is for finding the first digit that is a `6` and changes it to a `9`  by finding the first accurnce of a `6`, changing it to a 9 and breaking out of the loop so it doesn't change more than one digit
+This part finds the first digit that is a `6` and changes it to a `9`  by finding the first occurrence of a `6`, changing it to a 9, and breaking out of the loop, so it doesn't change more than one digit
 ``` c
 for i2,i := range arr{
     if i == 6{
@@ -59,7 +59,7 @@ for i2,i := range arr{
 
 ***
 
-This part gets the number that we have to multiply to the first digit to get its before placevalue . It does this by multiplying 1 by 10 for how long the number is `-1`
+This part gets the number that we have to multiply to the last digit to get its place value. It does this by multiplying one by 10 for how long the number is `-1.`
 ```c
 nummultiplyer := 1
 for i := 0 ; i < len(arr)-1 ; i++{
@@ -69,7 +69,7 @@ for i := 0 ; i < len(arr)-1 ; i++{
 
 ***
 
-This is the last part tis is were we add all the digits to a sum. If we add the digits all by itself the sum will not be like the first number with one digit fliped, for this we need to add the numbers times the `nummultiplyer` so it is at the correct placevalue and then we divide the `nummultiplyer` by ten so it give to correct placevalue for the second number and so on.
+This is the last part where we add all the digits to a sum. If we add the digits all by itself, the sum will not be like the given number with one digit flipped. We need to add the numbers times the `nummultiplyer` so it is at the correct place value and then divide the `nummultiplyer` by ten to the correct place value for the next number.
 ```c
 for _,i := range arr{
     sum += i*nummultiplyer
@@ -77,7 +77,7 @@ for _,i := range arr{
 }
 return sum
 ```
-
+End Code
 ***
 
 ``` go
