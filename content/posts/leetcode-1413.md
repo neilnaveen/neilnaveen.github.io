@@ -2,6 +2,7 @@
 title: "Leetcode 1413"
 date: 2021-07-05T11:07:06-05:00
 toc: false
+tags: [leetcode,array,math,golang]
 ---
 
 
