@@ -1,4 +1,46 @@
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Neil Naveen</title><link>https://neilnaveen.dev/posts/</link><description>Recent content in Posts on Neil Naveen</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Sat, 03 Jul 2021 18:37:13 -0500</lastBuildDate><atom:link href="https://neilnaveen.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode-1323</title><link>https://neilnaveen.dev/posts/leetcode-1323/</link><pubDate>Sat, 03 Jul 2021 18:37:13 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1323/</guid><description>1323. Maximum 69 Number
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Posts on Neil Naveen</title><link>https://neilnaveen.dev/posts/</link><description>Recent content in Posts on Neil Naveen</description><generator>Hugo -- gohugo.io</generator><language>en-us</language><copyright>&lt;a href="https://creativecommons.org/licenses/by-nc/4.0/" target="_blank" rel="noopener">CC BY-NC 4.0&lt;/a></copyright><lastBuildDate>Mon, 05 Jul 2021 11:07:06 -0500</lastBuildDate><atom:link href="https://neilnaveen.dev/posts/index.xml" rel="self" type="application/rss+xml"/><item><title>Leetcode 1413</title><link>https://neilnaveen.dev/posts/leetcode-1413/</link><pubDate>Mon, 05 Jul 2021 11:07:06 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1413/</guid><description>1413. Minimum Value to Get Positive Step by Step Sum
+The idea of the v2 solution is to find the smallest number in the step-by-step sums if your start num is 1. In the end, we add the smallest number we can to make all the steps positive
+v2 solution O(n) time and O(1) space
+func minStartValue(nums []int) int { sum := 1 min := 100000000 for _,j := range nums{ sum += j if sum &amp;lt;= min{ min = sum } } if min &amp;gt; 0 { return 1 } return (min*-1)+2 } v1 solution O(m*n) time and O(1) space</description><content type="html"><![CDATA[<p><a href="https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/">1413. Minimum Value to Get Positive Step by Step Sum</a></p>
+<p>The idea of the v2 solution is to find the smallest number in the step-by-step sums if your start num is <code>1</code>.  In the end, we add the smallest number we can to make all the steps positive</p>
+<p>v2 solution O(n) time and O(1) space</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minStartValue</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span>
+    <span style="color:#a6e22e">min</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">100000000</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span>{
+        <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">j</span>
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">&lt;=</span> <span style="color:#a6e22e">min</span>{
+            <span style="color:#a6e22e">min</span> = <span style="color:#a6e22e">sum</span>
+        }
+    }
+    <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">min</span> &gt; <span style="color:#ae81ff">0</span> {
+        <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">1</span>
+    }
+    <span style="color:#66d9ef">return</span> (<span style="color:#a6e22e">min</span><span style="color:#f92672">*-</span><span style="color:#ae81ff">1</span>)<span style="color:#f92672">+</span><span style="color:#ae81ff">2</span>
+}
+</code></pre></div><p>v1 solution O(m*n) time and O(1) space</p>
+<p>This is a brute force solution where we test from <code>0</code> to a <code>10000000000</code> for the start num in <code>m</code> time and see if the step by step addition is greater than <code>0</code></p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-go" data-lang="go"><span style="color:#66d9ef">func</span> <span style="color:#a6e22e">minStartValue</span>(<span style="color:#a6e22e">nums</span> []<span style="color:#66d9ef">int</span>) <span style="color:#66d9ef">int</span> {
+    <span style="color:#a6e22e">sum</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">0</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">i</span> <span style="color:#f92672">:=</span> <span style="color:#ae81ff">1</span> ; <span style="color:#a6e22e">i</span> &lt; <span style="color:#ae81ff">10000000000</span> ; <span style="color:#a6e22e">i</span><span style="color:#f92672">++</span>{
+        <span style="color:#a6e22e">sum</span> = <span style="color:#a6e22e">i</span>
+        <span style="color:#a6e22e">flag</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">true</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#a6e22e">_</span>,<span style="color:#a6e22e">j</span> <span style="color:#f92672">:=</span> <span style="color:#66d9ef">range</span> <span style="color:#a6e22e">nums</span>{
+            
+            <span style="color:#a6e22e">sum</span> <span style="color:#f92672">+=</span> <span style="color:#a6e22e">j</span>
+            <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">sum</span> <span style="color:#f92672">&lt;=</span> <span style="color:#ae81ff">0</span>{
+                <span style="color:#a6e22e">flag</span> = <span style="color:#66d9ef">false</span>
+                <span style="color:#66d9ef">break</span>
+            }
+        }
+        <span style="color:#66d9ef">if</span> <span style="color:#a6e22e">flag</span>{
+            <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">i</span>
+        }
+       
+    }
+    <span style="color:#66d9ef">return</span> <span style="color:#ae81ff">0</span>
+}
+</code></pre></div>]]></content></item><item><title>Leetcode-1323</title><link>https://neilnaveen.dev/posts/leetcode-1323/</link><pubDate>Sat, 03 Jul 2021 18:37:13 -0500</pubDate><guid>https://neilnaveen.dev/posts/leetcode-1323/</guid><description>1323. Maximum 69 Number
 This problem is about taking a number, let&amp;rsquo;s say9669, and making it the largest number it could be by flipping one digit from a 6 to a 9.
 The solution is made up of five parts.
 We split the number into its digits.
