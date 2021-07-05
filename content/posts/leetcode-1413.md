@@ -1,12 +1,14 @@
 ---
 title: "Leetcode-1413"
 date: 2021-07-05T10:52:20-05:00
+toc: false
 images:
 tags: [leetcode,array,golang, math]
 
 [1413. Minimum Value to Get Positive Step by Step Sum](https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/)
 
-The idea of the v2 solution is to find the smallest number in the step-by-step sums if your start num is ```1```.  In the end, we add the smallest number we can to make all the steps positive
+The idea of the v2 solution is to find the smallest number in the step-by-step sums if your start num is ```1```. 
+In the end, we add the smallest number we can to make all the steps positive
 
 v2 solution O(n) time and O(1) space
 ```go 
@@ -27,7 +29,8 @@ func minStartValue(nums []int) int {
 ```
 v1 solution O(m*n) time and O(1) space
 
-This is a brute force solution where we test from ```0``` to a ```10000000000``` for the start num in ```m``` time and see if the step by step addition is greater than ```0```
+This is a brute force solution where we test from `0` to a `10000000000` for the start num in ```m``` time and 
+see if the step by step addition is greater than `0`
 
 ```go
 func minStartValue(nums []int) int {
