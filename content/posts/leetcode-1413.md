@@ -1,5 +1,5 @@
 ---
-title: "Leetcode 1413"
+title: "Leetcode-1413"
 date: 2021-07-05T10:52:20-05:00
 images:
 tags: [leetcode,array,golang, math]
