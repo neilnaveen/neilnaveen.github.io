@@ -2,7 +2,7 @@
 title: "Leetcode 1413"
 date: 2021-07-05T10:52:20-05:00
 images:
-tags: [leetcode,array,golang,math]
+tags: [leetcode,array,golang, math]
 
 [1413. Minimum Value to Get Positive Step by Step Sum](https://leetcode.com/problems/minimum-value-to-get-positive-step-by-step-sum/)
 
