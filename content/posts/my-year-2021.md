@@ -20,7 +20,6 @@ I am 13 years old and have completed 395 problems in Leetcode. I have also finis
 ### What I Have Done in Leetcode
 
 * I have solved 390+ problems
-* I have
 
 
 ## My Advent of Code progress for 2021
