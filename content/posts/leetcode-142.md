@@ -3,7 +3,7 @@ title: "Leetcode-142"
 date: 2022-01-19T11:28:06-05:00
 toc: false
 images:
-tags : [leetcode,math,golang ]
+tags : [leetcode,golang ]
 ---
 
 [https://leetcode.com/problems/linked-list-cycle-ii/](https://leetcode.com/problems/linked-list-cycle-ii/)
