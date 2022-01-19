@@ -1,6 +1,6 @@
 ---
 title: "Leetcode-495"
-date: 2021-01-19T11:28:06-05:00
+date: 2021-07-05T11:28:06-05:00
 toc: false
 images:
 tags : [leetcode,math,golang ]

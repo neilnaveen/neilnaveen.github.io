@@ -1,6 +1,6 @@
 ---
 title: "Leetcode-142"
-date: 2022-07-05T11:28:06-05:00
+date: 2022-01-19T11:28:06-05:00
 toc: false
 images:
 tags : [leetcode,math,golang ]
