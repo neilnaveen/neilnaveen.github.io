@@ -6,7 +6,6 @@ images:
 tags : [leetcode,math,golang ]
 ---
 
-# Leetcode-142
 [https://leetcode.com/problems/linked-list-cycle-ii/](https://leetcode.com/problems/linked-list-cycle-ii/)
 ### **Intuiton for both solutions**
 * If we keep on going through the linked list, there are two outcomes, Either we keep on iterating forever, or there is no cycle, and the loop ends
