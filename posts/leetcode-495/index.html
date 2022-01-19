@@ -21,8 +21,8 @@ Leetcode-495 :: Neil Naveen
 <meta itemprop=description content="495. Teemo Attacking
 In this problem, we focus on that teemo&rsquo;s attack duration is reset when teemo attacks again.
 The code finds if teemo&rsquo;s attacks overlap with the next attack. If it does, add the duration that the attack lasts before it is reset - 1. If not, add the duration to the result.
-func findPoisonedDuration(timeSeries []int, duration int) int { res := 0 for i := 0 ; i < len(timeSeries)-1 ; i++{ if timeSeries[i] + duration-1 >= timeSeries[i+1]{ res += timeSeries[i+1] - timeSeries[i] }else{ res += duration } } res += duration return res } "><meta itemprop=datePublished content="2021-07-05T11:28:06-05:00">
-<meta itemprop=dateModified content="2021-07-05T11:28:06-05:00">
+func findPoisonedDuration(timeSeries []int, duration int) int { res := 0 for i := 0 ; i < len(timeSeries)-1 ; i++{ if timeSeries[i] + duration-1 >= timeSeries[i+1]{ res += timeSeries[i+1] - timeSeries[i] }else{ res += duration } } res += duration return res } "><meta itemprop=datePublished content="2021-01-19T11:28:06-05:00">
+<meta itemprop=dateModified content="2021-01-19T11:28:06-05:00">
 <meta itemprop=wordCount content="97"><meta itemprop=image content="https://neilnaveen.dev">
 <meta itemprop=keywords content="leetcode,math,golang,">
 <meta name=twitter:card content="summary_large_image">
@@ -39,9 +39,9 @@ The code finds if teemo&rsquo;s attacks overlap with the next attack. If it does
 func findPoisonedDuration(timeSeries []int, duration int) int { res := 0 for i := 0 ; i < len(timeSeries)-1 ; i++{ if timeSeries[i] + duration-1 >= timeSeries[i+1]{ res += timeSeries[i+1] - timeSeries[i] }else{ res += duration } } res += duration return res } ">
 <meta property="og:type" content="article">
 <meta property="og:url" content="https://neilnaveen.dev/posts/leetcode-495/"><meta property="og:image" content="https://neilnaveen.dev"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2021-07-05T11:28:06-05:00">
-<meta property="article:modified_time" content="2021-07-05T11:28:06-05:00"><meta property="og:site_name" content="Neil Naveen">
-<meta property="article:published_time" content="2021-07-05 11:28:06 -0500 -0500">
+<meta property="article:published_time" content="2021-01-19T11:28:06-05:00">
+<meta property="article:modified_time" content="2021-01-19T11:28:06-05:00"><meta property="og:site_name" content="Neil Naveen">
+<meta property="article:published_time" content="2021-01-19 11:28:06 -0500 -0500">
 </head>
 <body>
 <div class=container>
@@ -106,7 +106,7 @@ One minute
 97 Words
 </p>
 <p><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentcolor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-calendar"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
-2021-07-05 16:28
+2021-01-19 16:28
 </p>
 </div>
 <hr>
@@ -176,15 +176,9 @@ One minute
 </div>
 <div class=pagination__buttons>
 <span class="button previous">
-<a href=https://neilnaveen.dev/posts/my-year-2021/>
+<a href=https://neilnaveen.dev/posts/leetcode-1768/>
 <span class=button__icon>←</span>
-<span class=button__text>Year-2021</span>
-</a>
-</span>
-<span class="button next">
-<a href=https://neilnaveen.dev/posts/leetcode-1413/>
-<span class=button__text>Leetcode-1413</span>
-<span class=button__icon>→</span>
+<span class=button__text>Leetcode-1768</span>
 </a>
 </span>
 </div>
