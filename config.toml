@@ -32,8 +32,14 @@ series   = "series"
 [[params.social]]
 name = "leetcode"
 url= "https://leetcode.com/neilnaveen/"
+
+[[params.social]]
 name = "github"
 url= "https://github.com/neilnaveen"
+
+[[params.social]]
+name = "case"
+url = "https://www.codingame.com/profile/0fa733a2c7f92a829e4190625b5b9a485718854"
 [languages]
 [languages.en]
 title = "Neil Naveen"
