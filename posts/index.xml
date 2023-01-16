@@ -247,12 +247,12 @@ Then we find the first 6 and change it to a 9.</description><content type="html"
 <hr>
 <p>In the first part, we add the last digit to the array and dividing the number by ten to take the last digit off. Now we have an array of the digits of the number reversed</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span><span style="color:#66d9ef">for</span> num <span style="color:#f92672">&gt;</span> <span style="color:#ae81ff">0</span>{
-</span></span><span style="display:flex;"><span>    arr <span style="color:#f92672">=</span> append(arr,num <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
+</span></span><span style="display:flex;"><span>    arr <span style="color:#f92672">=</span> <span style="color:#a6e22e">append</span>(arr,num <span style="color:#f92672">%</span> <span style="color:#ae81ff">10</span>)
 </span></span><span style="display:flex;"><span>    num<span style="color:#f92672">/=</span><span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
 <p>This is the part for reversing the array. We have pointers on either side of the array. We then flip the digit on the left pointer digit with the right pointer digit and vice versa.</p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>l , r :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> , len(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>l , r :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> , <span style="color:#a6e22e">len</span>(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> l <span style="color:#f92672">&lt;</span> r{ 
 </span></span><span style="display:flex;"><span>    arr[l] , arr[r] <span style="color:#f92672">=</span> arr[r] , arr[l]
 </span></span><span style="display:flex;"><span>    l<span style="color:#f92672">++</span>
@@ -269,7 +269,7 @@ Then we find the first 6 and change it to a 9.</description><content type="html"
 </span></span></code></pre></div><hr>
 <p>This part gets the number that we have to multiply to the last digit to get its place value. It does this by multiplying one by 10 for how long the number is <code>-1.</code></p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c" data-lang="c"><span style="display:flex;"><span>nummultiplyer :<span style="color:#f92672">=</span> <span style="color:#ae81ff">1</span>
-</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ; i <span style="color:#f92672">&lt;</span> len(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ; i<span style="color:#f92672">++</span>{
+</span></span><span style="display:flex;"><span><span style="color:#66d9ef">for</span> i :<span style="color:#f92672">=</span> <span style="color:#ae81ff">0</span> ; i <span style="color:#f92672">&lt;</span> <span style="color:#a6e22e">len</span>(arr)<span style="color:#f92672">-</span><span style="color:#ae81ff">1</span> ; i<span style="color:#f92672">++</span>{
 </span></span><span style="display:flex;"><span>    nummultiplyer <span style="color:#f92672">*=</span> <span style="color:#ae81ff">10</span>
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><hr>
