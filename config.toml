@@ -32,7 +32,8 @@ series   = "series"
 [[params.social]]
 name = "leetcode"
 url= "https://leetcode.com/neilnaveen/"
-
+name = "github"
+url= "https://github.com/neilnaveen"
 [languages]
 [languages.en]
 title = "Neil Naveen"
