@@ -19,6 +19,9 @@ disableReadOtherPosts = false
 # Enable sharing buttons, if you like
 enableSharingButtons = true
 
+# Keep the light theme even when the visitor's system is set to dark.
+customCSS = ["/css/light.css"]
+
 # Metadata mostly used in document's head
 description = "Neil Naveen's Blog"
 keywords = "homepage, blog"
