@@ -1,0 +1,69 @@
+/* The theme switches to dark colors with prefers-color-scheme.
+   These rules put the light palette back. */
+html {
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #fff;
+    color: #222;
+  }
+
+  .header,
+  .menu {
+    background: #fafafa;
+  }
+
+  .posts:not(:last-of-type) {
+    border-color: #dcdcdc;
+  }
+
+  em,
+  i,
+  strong {
+    color: #000;
+  }
+
+  code,
+  button,
+  .button,
+  a.button,
+  .code-toolbar .toolbar-item a {
+    background: #eaeaea;
+    color: #222;
+  }
+
+  button.outline,
+  .button.outline,
+  a.button.outline {
+    background: transparent;
+    border-color: #eaeaea;
+    color: #222;
+  }
+
+  pre code {
+    background: none;
+    color: #ccc;
+  }
+
+  hr {
+    background: #dcdcdc;
+  }
+
+  .post-content table th,
+  .post-content table td,
+  .post-content table tbody tr {
+    border: 1px solid #dcdcdc;
+  }
+
+  .post-content table thead tr {
+    background-color: #dcdcdc;
+    color: #222;
+  }
+
+  .pagination__title-h {
+    background: #fff;
+    color: #999;
+  }
+}
