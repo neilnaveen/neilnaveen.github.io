@@ -1,6 +1,6 @@
 baseurl      = "https://neilnaveen.dev"
 title        = "Neil Naveen's Blog"
-languageCode = "en-us"
+locale = "en-us"
 theme        = "hello-friend-ng"
 paginate     = 10
 
