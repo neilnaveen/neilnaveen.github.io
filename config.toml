@@ -17,7 +17,7 @@ homeSubtitle = "My Blog"
 disableReadOtherPosts = false
 
 # Enable sharing buttons, if you like
-enableSharingButtons = true
+enableSharingButtons = false
 
 # Keep the light theme even when the visitor's system is set to dark.
 customCSS = ["/css/light.css"]
