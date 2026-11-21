@@ -1,6 +1,6 @@
 ---
 title: "LLMs have made bot programming boring, how can we make it fun again?"
-date: 2026-10-28T14:42:00-05:00
+date: 2026-11-21T14:42:00-05:00
 toc: false
 images:
 tags: [llms, programming]
